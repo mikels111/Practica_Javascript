@@ -1,0 +1,19 @@
+----HTML----
+(Oponente)
+-Cuadro para los PS y el nombre
+-el sprite
+
+
+(Usuario)
+-Cuadro para los PS y el nombre
+-El sprite
+
+(Entorno)
+-fondo(entorno)
+
+----CSS----
+
+
+----JS----
+-iniciar el juego(Primer mensaje)
+
