@@ -128,3 +128,82 @@ body {
     box-shadow: none;
     background-color: rgba(97, 218, 251)
 }
+
+#slider.slider-small {
+    height: 150px;
+}
+
+#slider.slider-small h1 {
+    margin-top: 0px;
+    padding-top: 52px;
+}
+
+#content {
+    width: 70%;
+    float: left;
+    min-height: 450px;
+    margin-right: 20px;
+}
+
+#sidebar {
+    width: 25%;
+    float: left;
+}
+
+.sidebar-item {
+    background-color: #f7f7f7;
+    padding: 15px;
+    margin-top: 30px;
+}
+
+.sidebar-item h3 {
+    text-transform: uppercase;
+    font-size: 15px;
+    margin: 0px;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    border-bottom: solid 1px rgb(161, 161, 161);
+}
+
+.sidebar-item .btn {
+    margin: auto;
+    margin-top: 10px;
+}
+
+.btn {
+    display: block;
+    background-color: black;
+    color: white;
+    padding: 15px;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 12px;
+    text-decoration: none;
+    max-width: 120px;
+    border: none;
+    transition: 200ms all;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.btn-success {
+    background-color: green;
+}
+
+.btn-success:hover {
+    background-color: black;
+}
+
+input[type='text'] {
+    width: 100%;
+    height: 30px;
+    padding: 3px;
+    border: solid 1px #ccc;
+    margin-bottom: 5px;
+    border-radius: 4px;
+    transition: 200ms all;
+}
+
+input[type='text']:hover {
+    box-shadow: 0px 0px 1px 1px #444;
+}
