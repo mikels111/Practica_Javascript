@@ -7,6 +7,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Maquetación HTML CSS | Inicio</title>
     <link rel="stylesheet" href="css/style.css">
+    <script>
+        window.addEventListener('load', () => {
+            var template = document.getElementById('article-template');
+            var articles = document.getElementById('articles');
+
+            for (let i = 0; i <= 4; i++) {
+                var clonado = template.cloneNode(true);
+                clonado.removeAttribute('id');
+
+                var h2 = clonado.getElementsByTagName('h2')[0];
+                h2.innerHTML = h2.textContent + ' ' + i;
+                articles.appendChild(clonado);
+
+            }
+        });
+    </script>
 </head>
 
 <body>
@@ -54,7 +70,24 @@
     <div class="center">
         <section id="content">
             <h2>Últimos artículos</h2>
+
             <!-- Listado de articulos -->
+            <div id="articles">
+                <article class="article-item" id="article-template">
+                    <div class="image-wrap">
+                        <img src="https://unhabitatmejor.leroymerlin.es/sites/default/files/styles/header_category/public/2018-10/4%20paisaje%20macedonia.jpg?itok=AELknmF8" alt="paisaje">
+                        <h2>Articulo de prueba</h2>
+                        <span class="date">
+                            Hace 5 min
+                        </span>
+                        <a href="#">Leer más</a>
+                    </div>
+                </article>
+                <!-- Añadir articulos por JS -->
+
+
+            </div>
+
         </section>
 
         <aside id="sidebar">
@@ -82,6 +115,7 @@
         </div>
 
     </footer>
+
 
 </body>
 
