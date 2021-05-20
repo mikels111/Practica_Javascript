@@ -174,7 +174,7 @@ body {
     display: block;
     background-color: black;
     color: white;
-    padding: 15px;
+    padding: 10px;
     font-weight: bold;
     text-transform: uppercase;
     font-size: 12px;
@@ -190,10 +190,24 @@ body {
 }
 
 .btn-success:hover {
-    background-color: black;
+    /* background-color: black; */
+    box-shadow: 0px 0px 6px 3px rgba(0, 128, 0, 0.247);
 }
 
-input[type='text'] {
+.mid-form {
+    width: 60%;
+    margin: auto;
+}
+
+.mid-form label {
+    display: block;
+    float: left;
+    margin: 10px 0px 6px;
+    font-size: 17px;
+}
+
+input[type='text'],
+textarea {
     width: 100%;
     height: 30px;
     padding: 3px;
@@ -202,8 +216,23 @@ input[type='text'] {
     border-radius: 4px;
 }
 
-input[type='text']:hover {
-    box-shadow: 0px 0px 1px 1px #444;
+input[type='text']:hover,
+textarea:hover {
+    box-shadow: 0px 0px 1px 1px rgba(68, 68, 68, 0.288);
+}
+
+textarea {
+    width: 100%;
+    height: 100px;
+    min-width: 100%;
+    min-height: 70px;
+    max-width: 100%;
+    max-height: 200px;
+}
+
+.radiobuttons {
+    margin: 10px 0px 16px;
+    float: left;
 }
 
 #footer {
@@ -216,4 +245,79 @@ input[type='text']:hover {
 
 #footer p {
     margin: 0px;
+}
+
+.article-item {
+    width: 100%;
+    border-bottom: solid 1px #eee;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    text-align: left;
+}
+
+.article-item .image-wrap {
+    width: 130px;
+    height: 130px;
+    overflow: hidden;
+    /*para que se oculte lo que sobresalga*/
+    float: left;
+    margin-right: 15px;
+    border: solid 1px #ccc;
+}
+
+.article-item .image-wrap img {
+    height: 100%;
+    text-align: center;
+}
+
+.article-item h2 {
+    display: block;
+    width: 100%;
+    padding: 0px;
+    margin: 0px;
+    margin-bottom: 7px;
+}
+
+.article-item .date {
+    display: block;
+    width: 100%;
+    color: rgb(126, 124, 124);
+}
+
+.article-item a {
+    display: block;
+    color: #444;
+    text-decoration: none;
+    margin-top: 10px;
+}
+
+.article-item a:hover {
+    text-decoration: underline;
+}
+
+.subheader {
+    font-size: 38px;
+    border-bottom: solid 1px #eee;
+    margin-top: 50px;
+    padding-bottom: 47px;
+}
+
+
+/* Estilos de detalle articulo */
+
+.article-detail .image-wrap {
+    float: none;
+    width: 100%;
+    height: 400px;
+}
+
+.article-detail .image-wrap img {
+    width: 100%;
+    height: auto;
+}
+
+.article-detail .subheader {
+    margin: 40px 0px 0px;
+    padding-bottom: 30px;
+    border-bottom: none;
 }

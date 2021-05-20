@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maquetación HTML CSS | Inicio</title>
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+    <header id="header">
+        <div class="center">
+            <!-- Logo  -->
+            <div id="logo">
+                <img class="app-logo" src="assets/images/logo_react.svg" alt="logo">
+                <span id="brand">
+                    <strong>Curso</strong>React
+                </span>
+            </div>
+            <!-- Menu navegación -->
+            <nav id="menu">
+                <ul>
+                    <li>
+                        <a href="#">Inicio</a>
+                    </li>
+                    <li>
+                        <a href="#">Blog</a>
+                    </li>
+                    <li>
+                        <a href="#">Formulario</a>
+                    </li>
+                    <li>
+                        <a href="#">Pagina 1</a>
+                    </li>
+                    <li>
+                        <a href="#">Pagina 2</a>
+                    </li>
+                </ul>
+            </nav>
+
+            <!-- Limpiar flotados -->
+            <div class="clearfix"></div>
+        </div>
+
+    </header>
+    <div class="center">
+        <section id="content">
+            <article class="article-item article-detail">
+                <div class="image-wrap">
+                    <img src="https://unhabitatmejor.leroymerlin.es/sites/default/files/styles/header_category/public/2018-10/4%20paisaje%20macedonia.jpg?itok=AELknmF8" alt="paisaje">
+                </div>
+                <h1 class="subheader">Articulo de prueba</h1>
+                <span class="date">
+                    Hace 5 min
+                </span>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur blandit dolor sit amet diam eleifend, pretium pharetra orci tristique. Nam vel purus arcu. Integer ultrices nunc eu ex finibus, ac pretium arcu egestas. Aenean ut ante
+                    arcu. Ut vel tincidunt erat, quis maximus ex. Phasellus egestas metus ante, nec laoreet velit fermentum quis. Donec nulla tortor, sodales non tortor eget, vulputate lobortis nisl. Nullam dapibus porttitor mi. Aenean id metus sed elit
+                    hendrerit luctus sit amet non massa. Donec aliquet augue sit amet gravida mollis. In non velit orci. Vestibulum quis lobortis mi. Cras ante eros, fringilla vel ipsum a, feugiat interdum mi. Proin massa erat, tempus suscipit dictum
+                    vel, aliquam eu velit. Aenean neque dui, facilisis in tempus a, rhoncus ac metus. Praesent lobortis dui imperdiet urna sagittis, non hendrerit augue vulputate.</p>
+                <p>Nam est nibh, euismod eget iaculis quis, vestibulum quis purus. Curabitur tempus accumsan ex, id viverra diam fringilla ut. Nam non venenatis lorem. Pellentesque scelerisque enim et congue ultricies. Duis aliquam augue nec nibh auctor
+                    aliquam. Etiam nunc est, scelerisque sed mattis sodales, vehicula in mi. Curabitur consectetur lectus in enim malesuada malesuada. In vitae ipsum tellus.
+                </p>
+                <p>Cras vel consequat est. Integer consectetur justo felis, sit amet gravida urna ornare ut. Aenean et elit suscipit odio tincidunt venenatis in ut eros. Sed est dui, tempus non consequat vel, rutrum ut lectus. Nam ullamcorper augue nunc,
+                    in facilisis massa dignissim a. Pellentesque eleifend lorem eget viverra aliquam. Donec fermentum tempor est vitae mattis. Phasellus dolor lacus, faucibus in fermentum vel, tristique ac tortor. Integer sed pharetra risus.</p>
+                <div class="clearfix"></div>
+            </article>
+
+        </section>
+
+        <aside id="sidebar">
+            <div id="nav-blog" class="sidebar-item">
+                <h3>Puedes hacer esto</h3>
+                <a href="#" class="btn btn-success">Crear articulo</a>
+            </div>
+
+            <div id="search" class="sidebar-item">
+                <h3>Buscador</h3>
+                <p>Encuentra un articulo</p>
+                <form action="">
+                    <input type="text" name="search">
+                    <input type="submit" name="subit" value="Buscar" class="btn">
+                </form>
+            </div>
+        </aside>
+        <div class="clearfix"></div>
+        <!--Limpiar flotado ---- Para que el footer no suba -->
+    </div>
+
+    <footer id="footer">
+        <div class="center">
+            <p>&copy React | Mikel Seara</p>
+        </div>
+
+    </footer>
+
+
+</body>
+
+</html>
