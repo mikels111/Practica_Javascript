@@ -1,0 +1,25 @@
+{
+  "name": "backend_mikel",
+  "version": "1.0.0",
+  "description": "api restful de frameworks para js",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mikels111/PracticaJavascript.git"
+  },
+  "author": "Mikel Seara",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mikels111/PracticaJavascript/issues"
+  },
+  "homepage": "https://github.com/mikels111/PracticaJavascript#readme",
+  "keywords": [
+    "backend_mikel"
+  ],
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
