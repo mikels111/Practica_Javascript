@@ -1,6 +1,6 @@
 'use strict' //https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Strict_mode
 
-var mongoose = require('mongoose'); //Para cargar un modulo de node.js
+var mongoose = require('mongoose'); //Para cargar el modulo mongoose de node.js
 var app = require('./app'); // cargar el modulo creado llamado app
 var port = 3900; //el puerto de la app
 
