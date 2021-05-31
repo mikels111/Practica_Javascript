@@ -10,4 +10,4 @@ var ArticleSchema = Schema({
     image: String
 });
 
-module.exports = mongoose.model('Article', 'ArticleSchema');
+module.exports = mongoose.model('Article', ArticleSchema);

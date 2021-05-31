@@ -13,6 +13,6 @@ mongoose.connect('mongodb://localhost:27017/api_rest_blog', { useNewUrlParser: t
         console.log('la conexión a la base de datos realizada correctamente');
         // Crear servidor y escuchar peticiones http
         app.listen(port, () => {
-            console.log('Servidor creado correctamente y ejecución en: http://localhost:' + port);
+            console.log('Servidor ejecutandose en: http://localhost:' + port);
         });
     });
