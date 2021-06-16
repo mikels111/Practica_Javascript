@@ -1,0 +1,7 @@
+POST http://localhost:3900/api/save HTTP/1.1
+content-type: application/json
+
+{
+    "title":"titulo2",
+    "content":"contenido2"
+}

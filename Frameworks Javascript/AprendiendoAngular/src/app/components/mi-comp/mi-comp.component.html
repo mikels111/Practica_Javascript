@@ -1,0 +1,14 @@
+<h1>{{titulo}}</h1>
+<!-- //data binding {{}} -->
+<h2>{{year}}</h2>
+<p>{{comentario}}</p>
+<p>Hola soy un parrafo</p>
+
+<button (click)='cambioPeliculas()'>Mostrar/Ocultar peliculas</button>
+<div *ngIf='mostrarPeliculas' id="divPeliculas">
+    <h1>La gran belleza</h1>
+    <h1>El caballero oscuro</h1>
+    <peliculas></peliculas>
+    <app-home></app-home>
+
+</div>
