@@ -1,6 +1,6 @@
 // Importar modulos del router de Angular
 import { ModuleWithProviders } from '@angular/core';
-import { Routes, RouterModule,Route } from '@angular/router';
+import { Routes, RouterModule, Route } from '@angular/router';
 // Importar componentes a los cuales les quiero hacer una pagina exclusiva
 import { HomeComponent } from './components/home/home.component';
 import { BlogComponent } from './components/blog/blog.component';//El nombre BlogComponent y HomeComponent es el nombre que le pone Angular
@@ -8,6 +8,10 @@ import { FormularioComponent } from './components/formulario/formulario.componen
 import { PeliculasComponent } from './components/peliculas/peliculas.component';
 import { PaginaComponent } from './components/pagina/pagina.component';
 import { ErrorComponent } from './components/error/error.component';
+import { ArticleComponent } from './components/article/article.component';
+import { SearchComponent } from './components/search/search.component';
+import { ArticleNewComponent } from './components/article-new/article-new.component';
+import { ArticleEditComponent } from './components/article-edit/article-edit.component'
 
 // Array de rutas y componentes que va a cargar
 const appRoutes: Routes = [
@@ -18,7 +22,12 @@ const appRoutes: Routes = [
     { path: 'peliculas', component: PeliculasComponent },
     { path: 'pagina-de-pruebas', component: PaginaComponent },
     { path: 'pagina-de-pruebas/:nombre/:apellidos', component: PaginaComponent },//:nombre y :apellidos son parametros
+    { path: 'buscar/:search', component: SearchComponent },
+    { path: 'blog/crear', component: ArticleNewComponent },
+    { path: 'blog/articulo/:id', component: ArticleComponent },
+    { path: 'blog/editar/:id', component: ArticleEditComponent },
     { path: '**', component: ErrorComponent }//Esta ruta es para que cuando la ruta no exista
+
 
 ];
 // Exportar el modulo de rutas

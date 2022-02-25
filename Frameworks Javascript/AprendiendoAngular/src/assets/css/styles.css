@@ -183,8 +183,8 @@ body {
 
 .btn {
     display: block;
-    background-color: black;
-    color: white;
+    background-color: lightgrey;
+    color: black;
     padding: 10px;
     font-weight: bold;
     text-transform: uppercase;
@@ -194,15 +194,37 @@ body {
     border: none;
     cursor: pointer;
     border-radius: 4px;
+    text-align: center;
 }
 
-.btn-success {
-    background-color: green;
+a:hover {
+    text-decoration: none;
 }
 
-.btn-success:hover {
-    /* background-color: black; */
-    box-shadow: 0px 0px 6px 3px rgba(0, 128, 0, 0.247);
+.btn:hover {
+    box-shadow: 0px 0px 1px 1.5px #DD0031;
+    text-decoration: none;
+}
+
+.btn:not(:hover) {
+    padding: 10px 10px 10px 10px;
+    transition: 0.2s;
+}
+
+.btn-edit:hover {
+    background-color: lightblue;
+    box-shadow: none;
+}
+
+.btn-warning {
+    background-color: rgb(240, 240, 0);
+    color: black;
+}
+
+.btn-danger:hover {
+    background-color: #DD0031;
+    box-shadow: none;
+    text-decoration: none;
 }
 
 .mid-form {
@@ -218,6 +240,7 @@ body {
 }
 
 input[type='text'],
+input[type='file'],
 textarea {
     width: 100%;
     height: 30px;
@@ -225,6 +248,12 @@ textarea {
     border: solid 1px #ccc;
     margin-bottom: 5px;
     border-radius: 4px;
+}
+
+.afu-attach-pin {
+    border-radius: 4px !important;
+    border: none !important;
+    background-color: lightgray !important;
 }
 
 input[type='text']:hover,
@@ -266,6 +295,13 @@ textarea {
     text-align: left;
 }
 
+.image-detail {
+    height: 230px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    float: top;
+}
+
 .article-item .image-wrap {
     width: 130px;
     height: 130px;
@@ -297,14 +333,15 @@ textarea {
 
 .article-item a {
     display: block;
-    color: #444;
+    /* color: #444; */
     text-decoration: none;
     margin-top: 10px;
 }
 
-.article-item a:hover {
+
+/* .article-item a:hover {
     text-decoration: underline;
-}
+} */
 
 .subheader {
     font-size: 38px;

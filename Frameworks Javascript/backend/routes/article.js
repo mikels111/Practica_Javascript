@@ -18,8 +18,8 @@ router.post('/save', ArticleController.save);
 router.get('/articles/:last?', ArticleController.getArticles); // ':last?' es un parametro opcional
 router.get('/article/:id', ArticleController.getArticle); // parametro obligatorio
 router.put('/update/:id', ArticleController.update); // Actualizar
-router.delete('/update/:id', ArticleController.delete); //Borrar
-router.post('/upload-img/:id', md_upload, ArticleController.upload);
+router.delete('/delete/:id', ArticleController.delete); //Borrar
+router.post('/upload-img/:id?', md_upload, ArticleController.upload);
 router.get('/get-img/:img', md_upload, ArticleController.getImage);
 router.get('/search/:search', md_upload, ArticleController.search);
 

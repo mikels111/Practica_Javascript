@@ -1,15 +1,23 @@
-<p>pagina works!</p>
-<div *ngIf="nombre && apellidos; then siHayParametros else noHayParametros">
-    <!-- Si si, carga la plantilla con nombre siHayParametros; si no, carga la etiqueta ng-template con nombre 'noHayParametros' -->
+<app-slider [nombre]="'Página'" [size]="'big'"></app-slider>
+<!-- Si se quiere poner un string hay que ponerlo con las dos comillas "'hola'"-->
+<div class="center">
+    <section id="content">
+        <p>pagina works!</p>
+        <div *ngIf="nombre && apellidos; then siHayParametros else noHayParametros">
+            <!-- Si si, carga la plantilla con nombre siHayParametros; si no, carga la etiqueta ng-template con nombre 'noHayParametros' -->
+        </div>
+
+        <ng-template #siHayParametros>
+            <p>Nombre: {{nombre}}</p>
+            <p>Apellidos: {{apellidos}}</p>
+        </ng-template>
+
+        <ng-template #noHayParametros>
+            <h2>No hay parametros para mostrar</h2>
+        </ng-template>
+
+        <button (click)="redireccion()">Ponme nombre y apellidos</button>
+
+    </section>
+    <app-sidebar></app-sidebar>
 </div>
-
-<ng-template #siHayParametros>
-    <p>Nombre: {{nombre}}</p>
-    <p>Apellidos: {{apellidos}}</p>
-</ng-template>
-
-<ng-template #noHayParametros>
-    <h2>No hay parametros para mostrar</h2>
-</ng-template>
-
-<button (click)="redireccion()">Ponme nombre y apellidos</button>

@@ -1,5 +1,9 @@
-<div id="slider" class="slider-big">
+<div id="slider" [ngClass]="{
+    'slider-big': !size || size == 'big',
+    'slider-small': size == 'small'
+}">
     <div class="clearfix"></div>
-    <h1>Bienvenido a la web de Angular</h1>
-    <a href="#" class="btn-white">Ir al blog</a>
+    <h1>{{nombre}}</h1>
+    <!-- Viene de app.component.html -->
+    <a [routerLink]="['/blog']" href="#" class="btn-white" *ngIf='!size || size == "big"'>Ir al blog</a>
 </div>

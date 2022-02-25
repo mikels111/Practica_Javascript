@@ -1,0 +1,52 @@
+<!-- Si se quiere poner un string hay que ponerlo con las dos comillas "'hola'"-->
+<div class="center">
+    <section id="content">
+        <h2 class="subheader">{{page_title}}</h2>
+        <!-- <p>{{user.name}}</p> -->
+        <!-- Esto es una prueba para mostrar datos a la vez que se escribe-->
+
+        <form class="mid-form" #articleform='ngForm' (ngSubmit)='onSubmit()'>
+            <div class="form-group">
+                <label for="title">Título</label>
+                <input type="text" name="title" #title='ngModel' [(ngModel)]="article.title" required>
+                <!-- [(ngModel)] es para decirle el campo que va modificar; Two way data binding-->
+                <small *ngIf="!title.valid && title.touched">
+                    <!-- 'title' es la variable que se le a puesto al input, en este caso '#title'-->
+                    El titulo no es valido
+                </small>
+            </div>
+
+
+
+            <div class="form-group">
+                <label for="content">Contenido</label>
+                <textarea name="content" #content="ngModel" cols="30" rows="10" [(ngModel)]='article.content' required></textarea>
+                <small *ngIf="!content.valid && content.touched">
+                    El contenido no es válido
+                </small>
+            </div>
+
+            <div class="form-group">
+                <angular-file-uploader [config]="afuConfig" (ApiResponse)="imageUpload($event)">
+                </angular-file-uploader>
+            </div>
+
+            <div *ngIf="is_edit">
+
+                <div class="image-detail">
+                    <img src="{{url+'/get-img/'+article.image}}" alt="{{article.title}}" *ngIf='article.image'>
+                    <img src="assets/images/placeholder.png" alt="{{article.title}}" *ngIf='!article.image'>
+                </div>
+            </div>
+
+            <div class="clearfix"></div>
+            <br>
+            <input type="submit" value="Guardar" class="btn btn-success" [disabled]="articleform.invalid">
+            <br>
+            <!-- Si el formulario tiene algun campo vacío el boton estára desabilitado-->
+        </form>
+
+        <!-- Si se le pone solo 'keyup' al pulsar cualquier tecla salta el evento-->
+    </section>
+    <app-sidebar></app-sidebar>
+</div>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Generator</title>
+    <link rel="stylesheet" href="src/assets/css/styles.css">
+    <link rel="icon" href="src/assets/img/icon.ico" type="image/icon">
+    
+</head>
+
+<body>
+    <div id="content">
+        <h1 id="title">Password Generator</h1>
+        <div id="frame">
+            <p class="field">
+                <label for="length">Length</label>
+                <input type="number" name="length" id="length">
+            </p>
+            
+            <p class="field">
+                <label for="num">Numbers</label>
+                <input type="number" name="num" id="num">
+            </p>
+            <p class="field">
+                <label for="lett">Letters</label>
+                <input type="number" name="lett" id="lett">
+            </p>
+            
+            <p class="field">
+                <label for="upper">Uppercase</label>
+                <input  type="number" name="upper" id="upper">
+                <input type="checkbox" name="cUpper" id="cUpper">
+            </p>
+            <p class="field">
+                <label for="symbols">Symbols</label> 
+                <input  type="number" name="symbols" id="symbols">
+                <input type="checkbox" name="cSymbols" id="cSymbols">
+            </p>
+            <button id="generate">Generate</button>
+            <p id="result"></p>
+        </div>
+    </div>
+    <script src="src/app.js"></script>
+</body>
+
+</html>

@@ -45,7 +45,12 @@ var controller = {
             // Asignar valores
             article.title = params.title;
             article.content = params.content;
-            article.image = null;
+
+            if (params.image) {
+                article.image = params.image;
+            } else {
+                article.image = null;
+            }
 
             // Guardar el articulo
             article.save((err, articleStored) => {
@@ -82,12 +87,12 @@ var controller = {
             query.limit(2);
         }
         // Find
-        query.sort('-_id').exec((err, articles) => { //las llaves dento del método find son para condiciones,por ejemplo que el _id sea mayor que 3. El método sort es para ordenar, en este caso se ordenan con el id descendente
+        query.sort('-_id').exec((err, articles) => { //las llaves dentro del método find son para condiciones,por ejemplo que el _id sea mayor que 3. El método sort es para ordenar, en este caso se ordenan con el id descendente
 
             if (err) {
                 return res.status(500).send({
                     status: 'error',
-                    message: 'Error al devolver los articulos'
+                    message: 'error al devolver los articulos'
                 });
             }
             if (!articles) {
@@ -120,7 +125,7 @@ var controller = {
         Article.findById(articleId, (err, article) => {
             if (err || !article) {
                 return res.status(500).send({
-                    status: 'Error al devolver el articulo con id ' + articleId
+                    status: 'error al devolver el articulo con id ' + articleId
                 });
             }
             // Devolver el artículo
@@ -143,7 +148,7 @@ var controller = {
             var validate_content = !validator.isEmpty(params.content);
         } catch (err) {
             return res.status(404).send({
-                status: 'Error',
+                status: 'error',
                 message: 'Faltan datos por enviar'
             });
         }
@@ -155,21 +160,21 @@ var controller = {
             Article.findOneAndUpdate({ _id: articleId }, params, { new: true }, (err, articleUpdated) => {
                 if (err) {
                     return res.status(500).send({
-                        status: 'Error',
+                        status: 'error',
                         message: 'No actualizado'
                     });
                 }
 
                 if (!articleUpdated) {
                     return res.status(404).send({
-                        status: 'Error',
+                        status: 'error',
                         message: 'No existe el artículo'
                     });
                 }
 
                 // Actualizado
                 return res.status(200).send({
-                    status: 'Success',
+                    status: 'success',
                     message: 'Actualizado',
                     articleUpdated
                 });
@@ -177,7 +182,7 @@ var controller = {
             });
         } else {
             return res.status(404).send({
-                status: 'Error',
+                status: 'error',
                 message: 'Faltan datos por enviar'
             });
         }
@@ -191,14 +196,14 @@ var controller = {
         Article.findOneAndDelete({ _id: articleId }, (err, articleRemoved) => {
             if (err) {
                 return res.status(500).send({
-                    status: 'Error',
+                    status: 'error',
                     message: 'Articulo no eliminado'
                 });
             }
 
             if (!articleRemoved) {
                 return res.status(404).send({
-                    status: 'Error',
+                    status: 'error',
                     message: 'No eliminado, no existe el artículo'
                 });
             }
@@ -239,7 +244,7 @@ var controller = {
             // Eliminar fichero
             fs.unlink(file_path, (err) => {
                 return res.status(500).send({
-                    status: "Error",
+                    status: "error",
                     message: 'Tipo de archivo no permitido'
                 });
             });
@@ -247,24 +252,33 @@ var controller = {
         } else {
             // Si todo es valido
             var article_id = req.params.id;
-            Article.findOneAndUpdate({ _id: article_id }, { image: file_name }, { new: true }, (err, articleUpdated) => {
+            if (article_id) {
+                Article.findOneAndUpdate({ _id: article_id }, { image: file_name }, { new: true }, (err, articleUpdated) => {
 
-                if (err || !articleUpdated) {
-                    return res.status(404).send({
-                        status: 'Error',
-                        message: 'No se ha guardado la imagen'
+                    if (err || !articleUpdated) {
+                        return res.status(404).send({
+                            status: 'error',
+                            message: 'No se ha guardado la imagen'
+                        });
+                    }
+                    return res.status(200).send({
+                        status: 'Success',
+                        articleUpdated
                     });
-                }
+                });
+                // Buscar el artículo, asignar el nombre de la imagen y actualizarla
                 return res.status(200).send({
                     status: 'Success',
-                    articleUpdated
+                    message: req.files
                 });
-            });
-            // Buscar el artículo, asignar el nombre de la imagen y actualizarla
-            return res.status(200).send({
-                status: 'Success',
-                message: req.files
-            });
+            } else {
+                return res.status(200).send({
+                    status: 'Success',
+                    image: file_name
+                });
+            }
+
+
         }
 
 
@@ -277,7 +291,7 @@ var controller = {
                 return res.sendFile(path.resolve(path_file)); // Devolverá la imagen
             } else {
                 return res.status(404).send({
-                    status: 'Error',
+                    status: 'error',
                     message: `El fichero ${file} en ${path_file} no existe`
                 });
             }
@@ -299,8 +313,8 @@ var controller = {
 
             if (err) {
                 return res.status(404).send({
-                    status: 'Error',
-                    message: 'Error en la búsqueda'
+                    status: 'error',
+                    message: 'error en la búsqueda'
                 });
             }
 
