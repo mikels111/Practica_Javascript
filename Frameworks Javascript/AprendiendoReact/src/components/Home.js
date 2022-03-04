@@ -1,8 +1,14 @@
 import React, { Component } from 'react';
 import Slider from './Slider';
 import Sidebar from './Sidebar';
+import axios from 'axios';
 class Home extends Component {
     render() {
+
+        axios.get("http://localhost:3900/api/articles")
+            .then(res => {
+                console.log(res.data);
+            });
         return (
             <React.Fragment>
                 <Slider

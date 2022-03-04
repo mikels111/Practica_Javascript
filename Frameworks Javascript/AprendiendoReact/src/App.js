@@ -5,11 +5,14 @@ import './assets/css/App.css';
 // import Sidebar from './components/Sidebar';
 // import Footer from './components/Footer';
 import Router from './Router';
+import React from 'react';
 function App() {
     // var buttonString = 'Ir al blog';
     return (
         <div className="App" >
                 <Router/>
+
+                
         </div>
     );
 }

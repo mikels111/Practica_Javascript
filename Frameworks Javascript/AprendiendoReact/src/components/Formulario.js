@@ -68,9 +68,9 @@ class Formulario extends Component {
                             </div>
  
                             <div className="form-group radiobuttons">
-                                <input type="radio" name="genero" value="mujer" ref={this.mujerRef} checked={user.genero=='mujer' && true}/> Mujer
-                                <input type="radio" name="genero" value="hombre" ref={this.hombreRef}  checked={user.genero=='hombre' && true}/> Hombre
-                                <input type="radio" name="genero" value="otro" ref={this.otroRef}  checked={user.genero=='otro' && true}/> Otro
+                                <input type="radio" name="genero" value="mujer" ref={this.mujerRef} checked={user.genero==='mujer' && true}/> Mujer
+                                <input type="radio" name="genero" value="hombre" ref={this.hombreRef}  checked={user.genero==='hombre' && true}/> Hombre
+                                <input type="radio" name="genero" value="otro" ref={this.otroRef}  checked={user.genero==='otro' && true}/> Otro
                             </div>
                             <div className="clearfix"></div>
                             <input type="submit" value="Enviar" className="btn btn-success"></input>

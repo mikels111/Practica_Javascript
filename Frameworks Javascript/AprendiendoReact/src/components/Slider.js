@@ -7,7 +7,7 @@ class Slider extends Component {
                 <div className="clearfix"></div>
                 <h1>{this.props.title}</h1>
                 {this.props.btn &&
-                    <NavLink to="/blog" activeClassName="active" className="btn-white">
+                    <NavLink to="/blog" activeclassname="active" className="btn-white">
                         {this.props.btn}
 
                     </NavLink>
