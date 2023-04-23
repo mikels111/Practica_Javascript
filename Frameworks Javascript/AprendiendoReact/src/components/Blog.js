@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Slider from './Slider';
 import Sidebar from './Sidebar';
+import Articles from './Articles';
 class Blog extends Component {
     render() {
         return (
@@ -12,6 +13,7 @@ class Blog extends Component {
                 <div className="center">
                     <div id='content'>
                        <h1>Listado de la api</h1>
+                       <Articles/>
                     </div>
                     <Sidebar 
                         blog='true'

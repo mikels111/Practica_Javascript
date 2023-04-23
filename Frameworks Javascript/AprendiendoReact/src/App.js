@@ -9,6 +9,7 @@ import React from 'react';
 function App() {
     // var buttonString = 'Ir al blog';
     return (
+        // classname para no confundir entre Js y CSS
         <div className="App" >
                 <Router/>
 
